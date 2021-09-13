@@ -1,5 +1,4 @@
 /// <reference types="cypress" />
-
 import {
   navigate,
   addTodo,
@@ -7,36 +6,35 @@ import {
   showOnlyActiveTodos,
   showOnlyCompletedTodos,
   showAllTodos,
-  validateNumberOfTodosShown,
-} from '..\cypress\page-objects\todo-page-function.js'
+  validateNumberOfTodosShown
+} from '../../page-objects/todo-page-function'
 
 describe('filtering', function() {
-  
-    beforeEach(() => {
-      navigate()
-  
-      addTodo('Clean room')
-      addTodo('Learn JavaScript')
-      addTodo('Use Cypress')
-  
-      toggleTodo(1)
-    })
-  
-    it('should filter "Active" correctly', () => {
-      showOnlyActiveTodos()
-  
-      validateNumberOfTodosShown(2)
-    })
-  
-    it('should filter "Completed" correctly', () => {
-      showOnlyCompletedTodos()
-  
-      validateNumberOfTodosShown(1)
-    })
-  
-    it('should filter "All" correctly', () => {
-      showAllTodos()
-  
-      validateNumberOfTodosShown(3)
-    })
+  beforeEach(() => {
+    navigate()
+
+    addTodo('Clean room')
+    addTodo('Learn JavaScript')
+    addTodo('Use Cypress')
+
+    toggleTodo(1)
   })
+
+  it('should filter "Active" correctly', () => {
+    showOnlyActiveTodos()
+
+    validateNumberOfTodosShown(2)
+  })
+
+  it('should filter "Completed" correctly', () => {
+    showOnlyCompletedTodos()
+
+    validateNumberOfTodosShown(1)
+  })
+
+  it('should filter "All" correctly', () => {
+    showAllTodos()
+
+    validateNumberOfTodosShown(3)
+  })
+})

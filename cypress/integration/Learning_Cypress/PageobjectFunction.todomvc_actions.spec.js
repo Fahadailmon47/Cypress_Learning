@@ -1,5 +1,4 @@
 /// <reference types="cypress" />
-
 import {
   navigate,
   addTodo,
@@ -8,12 +7,10 @@ import {
   clearCompleted,
   validateTodoCompletedState,
   validateToggleState,
-  validateNumberOfTodosShown,
-} from '..\cypress\page-objects\todo-page-function.js'
-
+  validateNumberOfTodosShown
+} from '../../page-objects/todo-page-function'
 
 describe('todo actions', () => {
-
   beforeEach(() => {
     navigate()
 
